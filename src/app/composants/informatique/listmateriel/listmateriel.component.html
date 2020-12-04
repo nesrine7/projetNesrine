@@ -1,5 +1,5 @@
 <h1> Nos Produits Informatique </h1>
-<ul>
+<!--ul>
     <div>
         <ng-container *ngFor ="let m of materiels">
             <li *ngIf="m.quantite>0">
@@ -16,4 +16,17 @@
              </li>
         </ng-container>
     </div>
-</ul>
+</ul-->
+
+<div class="container">
+    <div class="row">
+        <ng-container  *ngFor="let t of materiels">
+            <ng-container *ngIf="t.quantite>0">
+                <div  class="col">
+                    <nes-materiel [mat]="t"></nes-materiel>
+                </div>
+            </ng-container>
+     
+        </ng-container>
+    </div>
+</div>

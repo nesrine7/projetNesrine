@@ -1,0 +1,30 @@
+<div >
+    <div class="card-header c2"> 
+         {{mat.libelle|uppercase}}
+    </div>
+    <img class="card-img-top" src="{{mat.photo}}" alt="">
+    <div class="card-body">
+        <p class="card-text">
+            
+            <span  
+            [ngClass]=" mat.hautGamme ?
+             'badge badge-pill badge-primary' 
+             : 'badge badge-pill badge-dark' " > 
+             prix : {{mat.prix}} DT
+            <i [ngClass]="{'fa fa-thumbs-up': mat.hautGamme}"></i>                                                                                                                     
+
+          </span>
+
+            <!--span class="badge-pill" [ngClass]="{'badge-primary fa fa-thumbs-up ':mat.hautGamme==true,
+                                        'badge-dark' : mat.hautGamme==false}">
+                
+            </span-->
+        </p>
+    </div>
+    <div class="card-footer c1 c2 ">
+        <button class="btn btn-primary" (click)="onshow()"> details</button> 
+        <div *ngIf="!showing">
+        <nes-detailmateriel [det] = "mat">  </nes-detailmateriel>
+        </div>
+    </div>
+</div> 
