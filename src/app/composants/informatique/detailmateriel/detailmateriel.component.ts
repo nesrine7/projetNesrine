@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Materiel } from 'src/app/models/materiel';
+import { MaterielService } from 'src/app/services/materiel.service';
 
 @Component({
   selector: 'nes-detailmateriel',
@@ -7,14 +8,19 @@ import { Materiel } from 'src/app/models/materiel';
   styleUrls: ['./detailmateriel.component.css']
 })
 export class DetailmaterielComponent implements OnInit {
-  @Input() det: Materiel = new Materiel();
+  //@Input() det: Materiel = new Materiel();
+  materiels:Materiel[]
   showing:boolean = true; 
-  constructor() { }
+  id:string;
+  constructor(private materielservice:MaterielService) { }
   onshow()
   {
-    this.showing = !this.showing;
+  this.materielservice.getMaterielById('2');
   }
   ngOnInit(): void {
+    
+    
+
   }
 
 }

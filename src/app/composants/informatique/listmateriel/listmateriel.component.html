@@ -5,10 +5,10 @@
             <li *ngIf="m.quantite>0">
                 <img height="100px" width="160px" [src]= "m.photo">
                  {{m.libelle}}
-                 <span  
+                <span  
                   [ngClass]=" m.hautGamme ?
                    'badge badge-pill badge-primary' 
-                   : 'badge badge-pill badge-dark' " > 
+                   : 'ba dge badge-pill badge-dark' " > 
                    prix : {{m.prix}} DT
                   <i [ngClass]="{'fa fa-thumbs-up': m.hautGamme}"></i>                                                                                                                     
 
